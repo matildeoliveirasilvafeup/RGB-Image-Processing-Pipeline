@@ -1,0 +1,4 @@
+/home/diana/project-v2/project/build/CMakeFiles/runscrim.dir
+/home/diana/project-v2/project/build/CMakeFiles/tester.dir
+/home/diana/project-v2/project/build/CMakeFiles/edit_cache.dir
+/home/diana/project-v2/project/build/CMakeFiles/rebuild_cache.dir
