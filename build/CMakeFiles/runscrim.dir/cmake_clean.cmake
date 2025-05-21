@@ -33,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/runscrim.dir/src/Command/RotateRight.cpp.o.d"
   "CMakeFiles/runscrim.dir/src/Command/Save.cpp.o"
   "CMakeFiles/runscrim.dir/src/Command/Save.cpp.o.d"
+  "CMakeFiles/runscrim.dir/src/Command/ScaleUp.cpp.o"
+  "CMakeFiles/runscrim.dir/src/Command/ScaleUp.cpp.o.d"
   "CMakeFiles/runscrim.dir/src/Command/Slide.cpp.o"
   "CMakeFiles/runscrim.dir/src/Command/Slide.cpp.o.d"
   "CMakeFiles/runscrim.dir/src/Command/ToGrayScale.cpp.o"

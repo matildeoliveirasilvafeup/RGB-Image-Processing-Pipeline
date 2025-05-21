@@ -20,6 +20,8 @@
 #include "Command/Chain.hpp"
 #include "Command/Resize.hpp"
 #include "Command/Slide.hpp"
+#include "Command/ScaleUp.hpp"
+
 
 #include "Logger.hpp"
 
@@ -72,126 +74,112 @@ namespace prog {
     }
 
     Command *ScrimParser::parse_command(string command_name, istream &input) {
-        if (command_name == "blank") {
-            // Read information for Blank command
-            int w, h;
-            Color fill;
-            input >> w >> h >> fill;
-            return new command::Blank(w, h, fill);
-        }
+    if (command_name == "blank") {
+        int w, h;
+        Color fill;
+        input >> w >> h >> fill;
+        return new command::Blank(w, h, fill);
+    }
 
-        if (command_name == "save") {
-            // Read information for Save command
-            string filename;
-            input >> filename;
-            return new command::Save(filename);
-        }
+    if (command_name == "save") {
+        string filename;
+        input >> filename;
+        return new command::Save(filename);
+    }
 
-        if (command_name == "open") {
-            string filename;
-            input >> filename;
-            return new command::Open(filename);
-        }
+    if (command_name == "open") {
+        string filename;
+        input >> filename;
+        return new command::Open(filename);
+    }
 
-        if (command_name == "invert") {
-            return new command::Invert();
-        }
-
-        if (command_name == "to_gray_scale") {
-            return new command::ToGrayScale();
-        }
-
-        if (command_name == "replace") {
-            Color oldColor, newColor;
-            input >> oldColor >> newColor;
-            return new command::Replace(oldColor, newColor);
-
-        }
-        if (command_name == "invert") {
+    if (command_name == "invert") {
         return new command::Invert();
     }
-        if (command_name == "to_gray_scale") {
-            return new command::ToGrayScale();
-        }
 
-        if (command_name == "replace") {
-            Color oldColor, newColor;
-            input >> oldColor >> newColor;
-            return new command::Replace(oldColor, newColor);
-        }
-
-        if (command_name == "fill") {
-            int x, y, w, h;
-            Color c;
-            input >> x >> y >> w >> h >> c;
-            return new command::Fill(x, y, w, h, c);
-        }
-
-        if (command_name == "h_mirror") {
-            return new command::HMirror();
-        }
-
-        if (command_name == "v_mirror") {
-            return new command::VMirror();
-        }
-
-        if (command_name == "add") {
-            string filename;
-            Color neutral;
-            int x, y;
-            input >> filename >> neutral >> x >> y;
-            return new command::Add(filename, neutral, x, y);
-        }
-
-        if (command_name == "move") {
-            int dx, dy;
-            input >> dx >> dy;
-            return new command::Move(dx, dy);
-        }
-
-        if (command_name == "crop") {
-            int x, y, w, h;
-            input >> x >> y >> w >> h;
-            return new command::Crop(x, y, w, h);
-        }
-
-        if (command_name == "rotate_left") {
-            return new command::RotateLeft();
-        }
-
-        if (command_name == "resize") {
-            int x, y, w, h;
-            Color fill;
-            input >> x >> y >> w >> h >> fill;
-            return new command::Resize(x, y, w, h, fill);
-        }
-
-        if (command_name == "chain") {
-            std::vector<std::string> filenames;
-            std::string filename;
-            while (input >> filename && filename != "end") {
-                filenames.push_back(filename);
-            }
-            return new command::Chain(filenames);
-        }
-        if (command_name == "resize") {
-            int x, y, w, h;
-            Color fill;
-            input >> x >> y >> w >> h >> fill;
-            return new command::Resize(x, y, w, h, fill);
-        }
-
-        if (command_name == "rotate_right") {
-            return new command::RotateRight();
-        }
-
-        if (command_name == "slide") {
-            int dx, dy;
-            input >> dx >> dy;
-            return new command::Slide(dx, dy);
-        }
-
-        *Logger::err() << "Command not recognized: '" + command_name + "'\n";
-        return nullptr;
+    if (command_name == "to_gray_scale") {
+        return new command::ToGrayScale();
     }
+
+    if (command_name == "replace") {
+        Color oldColor, newColor;
+        input >> oldColor >> newColor;
+        return new command::Replace(oldColor, newColor);
+    }
+
+    if (command_name == "fill") {
+        int x, y, w, h;
+        Color c;
+        input >> x >> y >> w >> h >> c;
+        return new command::Fill(x, y, w, h, c);
+    }
+
+    if (command_name == "h_mirror") {
+        return new command::HMirror();
+    }
+
+    if (command_name == "v_mirror") {
+        return new command::VMirror();
+    }
+
+    if (command_name == "add") {
+        string filename;
+        Color neutral;
+        int x, y;
+        input >> filename >> neutral >> x >> y;
+        return new command::Add(filename, neutral, x, y);
+    }
+
+    if (command_name == "move") {
+        int dx, dy;
+        input >> dx >> dy;
+        return new command::Move(dx, dy);
+    }
+
+    if (command_name == "crop") {
+        int x, y, w, h;
+        input >> x >> y >> w >> h;
+        return new command::Crop(x, y, w, h);
+    }
+
+    if (command_name == "rotate_left") {
+        return new command::RotateLeft();
+    }
+
+    if (command_name == "resize") {
+        int x, y, w, h;
+        Color fill;
+        input >> x >> y >> w >> h >> fill;
+        return new command::Resize(x, y, w, h, fill);
+    }
+
+    if (command_name == "chain") {
+        std::vector<std::string> filenames;
+        std::string filename;
+        while (input >> filename && filename != "end") {
+            filenames.push_back(filename);
+        }
+        return new command::Chain(filenames);
+    }
+
+    if (command_name == "rotate_right") {
+        return new command::RotateRight();
+    }
+
+    if (command_name == "slide") {
+        int dx, dy;
+        input >> dx >> dy;
+        return new command::Slide(dx, dy);
+    }
+
+    if (command_name == "scaleup") {
+        int fx, fy;
+        input >> fx >> fy;
+        return new ScaleUp(fx, fy);
+    }
+
+    *Logger::err() << "Command not recognized: '" + command_name + "'\n";
+    return nullptr;
+}
+
 }
