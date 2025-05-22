@@ -1,25 +1,23 @@
-//
-// Created by diana on 12-05-2025.
-//
+#ifndef PROG_COMMAND_MOVE_HPP
+#define PROG_COMMAND_MOVE_HPP
 
-#ifndef __PROG_MOVE_HPP__
-#define __PROG_MOVE_HPP__
-
-#include "../Command.hpp"
-#include "../Color.hpp"
+#include "Command.hpp"
 
 namespace prog {
-    namespace command {
-        class Move : public Command {
-        private:
-            int dx, dy;
-            Color fill;
-        public:
-            Move(int dx, int dy, Color fill = {0, 0, 0});
-            Image* apply(Image* img) override;
-            std::string toString() const override;
-        };
-    }
+
+    // Represents a command to move the image by (dx, dy) pixels
+    class Move : public Command {
+    public:
+        // Constructs the move command with specified displacement values
+        Move(int dx, int dy);
+
+        // Applies the move operation to the given image
+        Image* apply(Image* img) override;
+
+    private:
+        int dx, dy; // Displacement in the x and y directions
+    };
+
 }
 
-#endif
+#endif // PROG_COMMAND_MOVE_HPP

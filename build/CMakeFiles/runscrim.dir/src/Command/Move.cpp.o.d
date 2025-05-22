@@ -2,9 +2,9 @@ CMakeFiles/runscrim.dir/src/Command/Move.cpp.o: \
  /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/src/Command/Move.cpp \
  /usr/include/stdc-predef.h \
  /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/Move.hpp \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Command.hpp \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Image.hpp \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Color.hpp \
+ /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command.hpp \
+ /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Image.hpp \
+ /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Color.hpp \
  /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -162,7 +162,4 @@ CMakeFiles/runscrim.dir/src/Command/Move.cpp.o: \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Color.hpp \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Image.hpp \
- /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Command/../Color.hpp \
- /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc
+ /mnt/c/Users/hermi/Desktop/2_ano/2º\ semestre/Programacao\ 2\ ano/projeto/PROG_RGB/include/Image.hpp
