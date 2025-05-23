@@ -1,4 +1,0 @@
-/mnt/c/Users/hermi/Desktop/2_ano/2º semestre/Programacao 2 ano/projeto/Prog_RGB/build/CMakeFiles/runscrim.dir
-/mnt/c/Users/hermi/Desktop/2_ano/2º semestre/Programacao 2 ano/projeto/Prog_RGB/build/CMakeFiles/tester.dir
-/mnt/c/Users/hermi/Desktop/2_ano/2º semestre/Programacao 2 ano/projeto/Prog_RGB/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/hermi/Desktop/2_ano/2º semestre/Programacao 2 ano/projeto/Prog_RGB/build/CMakeFiles/rebuild_cache.dir

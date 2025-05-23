@@ -17,16 +17,24 @@ namespace prog {
             // Create a new image with the desired dimensions and fill color.
             Image* result = new Image(m_w, m_h, m_fill);
 
-            // Determine how many pixels we can copy from the original image.
-            int copyW = std::min(img->width() - m_x, m_w);
-            int copyH = std::min(img->height() - m_y, m_h);
+            // Calculate the starting point in the source image, ensuring it's within bounds (>= 0).
+            int startSrcX = std::max(0, m_x);
+            int startSrcY = std::max(0, m_y);
 
-            // Only proceed with copying if the coordinates are within bounds.
-            if (m_x < img->width() && m_y < img->height() && copyW > 0 && copyH > 0) {
+            // Calculate the starting point in the destination image, accounting for negative offsets.
+            int startDstX = std::max(0, -m_x);
+            int startDstY = std::max(0, -m_y);
+
+            // Determine how many pixels we can copy from the original image.
+            int copyW = std::min(img->width() - startSrcX, m_w - startDstX);
+            int copyH = std::min(img->height() - startSrcY, m_h - startDstY);
+
+            // Only proceed with copying if there's a visible intersection.
+            if (copyW > 0 && copyH > 0) {
                 for (int x = 0; x < copyW; ++x) {
                     for (int y = 0; y < copyH; ++y) {
-                        // Copy pixel from original image (offset by m_x, m_y) into result.
-                        result->at(x, y) = img->at(m_x + x, m_y + y);
+                        // Copy pixel from original image (offset by m_x, m_y) into result at the adjusted position.
+                        result->at(startDstX + x, startDstY + y) = img->at(startSrcX + x, startSrcY + y);
                     }
                 }
             }
@@ -45,6 +53,5 @@ namespace prog {
                    " fill:" + std::to_string(m_fill.red()) + "," +
                    std::to_string(m_fill.green()) + "," + std::to_string(m_fill.blue());
         }
-
     }
 }
