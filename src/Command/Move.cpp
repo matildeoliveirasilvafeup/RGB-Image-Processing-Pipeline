@@ -3,7 +3,7 @@
 
 namespace prog {
 
-    // Constructor for the Move command, initializing displacement in x and y directions
+    // Initializes displacement in x and y directions
     Move::Move(int dx, int dy)
         : Command("move"), dx(dx), dy(dy) {}
 
@@ -13,7 +13,6 @@ namespace prog {
         int h = img->height();  // Get image height
 
         // Create a new image with the same dimensions, filled with white by default
-        // (this could be made configurable later)
         Image* result = new Image(w, h, Color(255, 255, 255));
 
         // Iterate over each pixel in the original image

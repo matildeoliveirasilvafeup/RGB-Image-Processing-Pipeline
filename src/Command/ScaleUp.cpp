@@ -6,8 +6,6 @@
 #include "Image.hpp"
 
 namespace prog {
-
-    // Constructor for the ScaleUp command.
     // Takes the horizontal (fx) and vertical (fy) scale factors.
     ScaleUp::ScaleUp(int fx, int fy)
         : Command("scaleup"), factor_x(fx), factor_y(fy) {}
