@@ -17,7 +17,8 @@ namespace prog {
         public:
             Fill(int x, int y, int w, int h, Color color);
             Image* apply(Image* img) override;
-            std::string toString() const override;
+
+            std::string toString() const override; //conversão para string
         };
     }
 }
