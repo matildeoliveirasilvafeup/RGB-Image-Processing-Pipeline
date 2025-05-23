@@ -1,0 +1,4 @@
+/home/diana/CLionProjects/Prog_RGB_333/build/CMakeFiles/runscrim.dir
+/home/diana/CLionProjects/Prog_RGB_333/build/CMakeFiles/tester.dir
+/home/diana/CLionProjects/Prog_RGB_333/build/CMakeFiles/edit_cache.dir
+/home/diana/CLionProjects/Prog_RGB_333/build/CMakeFiles/rebuild_cache.dir
