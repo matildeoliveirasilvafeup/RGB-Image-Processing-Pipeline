@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/runscrim.dir/link.d"
   "CMakeFiles/runscrim.dir/main/RunScrim.cpp.o"
   "CMakeFiles/runscrim.dir/main/RunScrim.cpp.o.d"
   "CMakeFiles/runscrim.dir/src/Color.cpp.o"
