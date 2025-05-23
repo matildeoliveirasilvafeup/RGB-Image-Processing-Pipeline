@@ -12,7 +12,7 @@ namespace prog {
             Command("chain"), m_filenames(filenames) {}
 
         Image* Chain::apply(Image* img) {
-            static std::set<std::string> processedFiles;
+            static std::set<std::string> processedFiles; //avoids infinite recursion, so that each script is processed more than one time
             ScrimParser parser;
 
             for (const auto& filename : m_filenames) {
@@ -20,16 +20,15 @@ namespace prog {
                 processedFiles.insert(filename);
 
                 std::ifstream file(filename);
-                if (!file) continue;
+                if (!file) continue; //only valid files are processed
 
-                Scrim* scrim = parser.parseScrim(file);
+                Scrim* scrim = parser.parseScrim(file); //Parses the file and creates one scrim object with instructions
                 if (scrim) {
-                    img = scrim->run(img);
-                    delete scrim;
+                    img = scrim->run(img); //applys the instructions in the current image
+                    delete scrim; //free memory
                 }
             }
-            processedFiles.clear();
-            return img;
+            return img; //after all the transformations it returns the image
         }
     }
 }
